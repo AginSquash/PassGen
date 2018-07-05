@@ -100,11 +100,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Gen(View v) {
+
         EditText num = (EditText) findViewById(R.id.passLength);
         EditText passOutText = (EditText) findViewById(R.id.passout);
+
         passOutText.setText("");
         passOut="";
-        for (int much =  Integer.parseInt(num.getEditableText().toString()); much!=0; much=much-1) {
+        long length = 0;
+        try {
+            length = Long.parseLong(num.getEditableText().toString());
+        } catch (NumberFormatException ex){
+            Toast.makeText(getApplicationContext(), "Please enter the actual length", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (length < 1)
+        {
+            Toast.makeText(getApplicationContext(), "Please enter the actual length", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        for (long much =  Long.parseLong(num.getEditableText().toString()); much!=0; much=much-1) {
             SecureRandom nlsR = new SecureRandom();
             int nls = nlsR.nextInt(3);
             switch (nls) {
@@ -311,8 +326,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void GitHub(View v){
-        Uri address = Uri.parse("https://vk.com");
-        Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
+
+        Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/AginSquash/PassGen"));
         startActivity(openlinkIntent);
     }
 }

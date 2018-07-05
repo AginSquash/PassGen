@@ -107,11 +107,11 @@
         android:id="@+id/copy"
         android:layout_width="70dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="300dp"
         android:layout_marginTop="8dp"
         android:onClick="Copy"
         android:text="COPY"
-        app:layout_constraintBottom_toBottomOf="@+id/numsw"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/passout"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,7 +124,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="GitHub"
-        android:text="Developed by Agins, 2017 © Tap to see GitHab code"
+        android:text="Developed by AginS, 2017 © Tap to see GitHab code"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
